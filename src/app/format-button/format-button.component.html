@@ -1,0 +1,5 @@
+<button class="formatBtns_btn" (click)="handleClick();">
+  <!-- Only render if faClass isn't empty -->
+  <i *ngIf="faClass != ''" [class]="faClass"></i>
+  <span *ngIf="faClass == ''">{{ name }}</span>
+</button>

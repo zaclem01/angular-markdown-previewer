@@ -1,0 +1,41 @@
+<div class="fixedWrapper">
+  <div class="inputContainer_formatBtns">
+    <app-format-button
+      *ngFor="let btn of formatBtns"
+      [name]="btn.name" 
+      [value]="btn.value"
+      [wrap]="btn.wrap"
+      [faClass]="btn.faClass" 
+      (onBtnClick)="handleBtnClick($event, inputArea);">
+    </app-format-button>
+  </div>
+  <textarea 
+    #inputArea
+    class="inputContainer_text" 
+    [(ngModel)]="input"
+    (keyup)="updateSelected(inputArea);"
+    (mouseup)="updateSelected(inputArea);">
+  </textarea>
+  <div>
+    <input 
+      id="input_fileUpload"
+      class="inputContainer_uploadFile" 
+      type="file" 
+      name="file"
+      multiple 
+      (change)="handleFileUpload($event);"
+    />
+    <a 
+      class="inputContainer_uploadFile_presentation s-linkBtn"
+      onclick="document.getElementById('input_fileUpload').click();">
+      Upload File
+    </a>
+    <a 
+      class="inputContainer_downloadFile s-linkBtn"
+      [href]="exportFile" 
+      target="_blank" 
+      download="markdown-export.md">
+      Export
+    </a>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+.formatBtns_btn {
+    background: rgb(221, 221, 221);
+    border: none;
+    cursor: pointer;
+    margin: 2px 2px 0 0;
+    padding: 5px;
+    text-align: center;
+}
+    .formatBtns_btn:hover {
+        background: rgb(200, 200, 200);
+    }

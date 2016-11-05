@@ -1,0 +1,47 @@
+.fixedWrapper {
+    background: rgb(241, 241, 241);
+    box-sizing: border-box;
+    padding: 3px 5px 5px 5px;
+    position: fixed;
+    width: 35%;
+}
+    .inputContainer_formatBtns {
+        margin-bottom: 5px;
+    }
+    .inputContainer_text {
+        box-sizing: border-box;
+        height: 70vh;
+        padding: 5px;
+        resize: none;
+        width: 100%;
+    }
+    .inputContainer_uploadFile {
+        display: none;
+    }
+    .inputContainer_uploadFile_presentation,
+    .inputContainer_downloadFile {
+        float: left;
+        margin-right: 5px;
+    }
+
+.s-linkBtn {
+    background: rgb(77, 79, 85);
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 5px;
+    text-decoration: none;
+}  
+    .s-linkBtn:hover {
+        background: rgb(255, 255, 255);
+        color: rgb(77, 79, 85);
+    }
+
+@media screen and (max-width: 640px) {
+    .fixedWrapper {
+        overflow: hidden;
+        position: relative;
+        width: 95%;
+    }
+}

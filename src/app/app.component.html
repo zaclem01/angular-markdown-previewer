@@ -1,3 +1,6 @@
-<h1>
-  {{title}}
-</h1>
+<h1 class="title">Markdown Previewer</h1>
+<div class="mainContainer">
+    <app-markdown-input class="inputContainer" (inputChange)="handleInput($event);"></app-markdown-input>
+    <app-markdown-output class="outputContainer" [formattedOutput]="parseRaw()"></app-markdown-output>
+</div>
+<footer class="footer">Powered by Angular 2.0</footer>
