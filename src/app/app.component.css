@@ -36,6 +36,9 @@
 }
 
 @media screen and (max-width: 640px) {
+    .title {
+        font-size: .7em;
+    }
     .mainContainer {
         flex-wrap: wrap;
     }
