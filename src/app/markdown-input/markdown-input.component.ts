@@ -62,17 +62,9 @@ export class MarkdownInputComponent implements DoCheck {
   }
 
   private updateFileExport(): void {
-    let file: any;
-    const properties = { type: 'plain/text' };
-
-    // Try creating File if supported, otherwise use Blob
-    try {
-      file = new File(this.input.split('\n'), 'markdown-export.md', properties);
-    } catch(e) {
-      file = new Blob(this.input.split('\n'), properties);
-    }
+    let file = URL.createObjectURL(this.fileService.writeFileExport(this.input));
     // Angular stops unsafe DOM manipulation so must be disabled with service
-    this.exportFile = this.sanitizer.bypassSecurityTrustUrl(URL.createObjectURL(file));
+    this.exportFile = this.sanitizer.bypassSecurityTrustUrl(file);
   }
 
   // Add formatting to selection and update input

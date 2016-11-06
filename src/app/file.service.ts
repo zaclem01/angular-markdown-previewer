@@ -26,4 +26,18 @@ export class FileService {
     }
     return result;
   }
+
+  writeFileExport(input: string): File | Blob {
+    let file: File | Blob;
+    const properties = { type: 'plain/text' };
+
+    // Try creating File if supported, otherwise use Blob
+    try {
+      // keep new lines
+      file = new File(input.split(/(\n)/g), 'markdown-export.md', properties);
+    } catch(e) {
+      file = new Blob(input.split(/(\n)/g), properties);
+    }
+    return file;
+  }
 }
